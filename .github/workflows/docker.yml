@@ -19,12 +19,12 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/mikesupertrampster/simple-json-server:${{ env.RELEASE_VERSION }}
+          tags: ghcr.io/mikesupertrampster/algo-feeder:${{ env.RELEASE_VERSION }}
           cache-from: type=registry,ref=user/app:latest
           cache-to: type=inline
       - uses: aquasecurity/trivy-action@master
         with:
-          image-ref: ghcr.io/mikesupertrampster/simple-json-server:${{ env.RELEASE_VERSION }}
+          image-ref: ghcr.io/mikesupertrampster/algo-feeder:${{ env.RELEASE_VERSION }}
           format: template
           template: '@/contrib/sarif.tpl'
           output: trivy-results.sarif
