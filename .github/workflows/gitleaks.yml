@@ -16,7 +16,7 @@ jobs:
         uses: docker://zricethezav/gitleaks:v7.3.0
         with:
           args: gitleaks --depth=${{ steps.pr_depth.outputs.count }} --path . --redact -v --format=sarif --report=gitleaks.sarif
-      - uses: github/codeql-action/upload-sarif@v1
+      - uses: github/codeql-action/upload-sarif@v2
         continue-on-error: true
         with:
           sarif_file: gitleaks.sarif
